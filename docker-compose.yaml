@@ -1,10 +1,15 @@
 version: '1.0'
 
 services:
-  varnish_teste:
+  varnish:
     container_name: varnish-teste
     image: varnish:7.3.0-alpine
     volumes:
       - ./varnish:/etc/varnish/
     ports:
      - 8080:80
+  varnish_personalizado: #Container com configuração do default.vcl personalizada
+    container_name: varnish-personalizado
+    image: felipejm91/varnish-felipejm:v1
+    ports:
+     - 8081:80
