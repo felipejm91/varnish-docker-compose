@@ -1,0 +1,10 @@
+version: '1.0'
+
+services:
+  varnish_teste:
+    container_name: varnish-teste
+    image: varnish:7.3.0-alpine
+    volumes:
+      - ./default.vlc:/etc/varnish/
+    ports:
+     - 8080:80
